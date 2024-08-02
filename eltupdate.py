@@ -100,7 +100,7 @@ def execute_script():
     db_manager.set_inputs(fabric, color, vendor, elt)
     df = pd.DataFrame()  
     db_manager.update_and_fetch(df, file_path, file_name)
-    messagebox.showinfo("Success", "Script executed successfully!")
+    messagebox.showinfo("Database updated!")
 
 
 db_manager = ELTUpdater('PB_Upholstery', 'WE_Upholstery')
@@ -141,7 +141,7 @@ file_name_menu.grid(row=6, column=5, sticky="ew")
 
 
 file_path_var = StringVar(root)
-tk.Label(root, text="File Path:").grid(row=5, column=0, sticky="e")
+tk.Label(root, text="Folder Path:").grid(row=5, column=0, sticky="e")
 file_path_entry = tk.Entry(root, textvariable=file_path_var)
 file_path_entry.grid(row=5, column=1, sticky="ew")
 tk.Button(root, text="Browse", command=select_folder).grid(row=5, column=2)
